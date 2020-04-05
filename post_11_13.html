@@ -82,7 +82,7 @@
               
               <p>In order to decide the correct position to install the Realsense, I tried some frames for the different possible positions of the camera sensor on the robot, and then finalised the position for the camera sensor to be attached.</p>
 
-              <p><b>Final Position to Install - </b>Realsense with 6 degrees of freedom.</p>
+              <p><b>Final Position Installed - </b>Realsense with 6 Degrees of freedom.</p>
               <p><img class="img-fluid" src="img/install.png" alt=""></p>
 
               <p>Afterwards I began to segment the sensor data, for the detection of a simple object, a box. Then  
@@ -90,11 +90,11 @@
                I started by eliminating parts of the non featured points, in order to simplify and keep only the points that represent the objects.
               The algorithm and filters used where the following:</p>
               <ul>
-                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html">SIFT</a> (Scale Invarient Feature Transform) :- sift.detect() function finds the keypoint in the images. You can pass a mask if you want to search only a part of image. Each keypoint is a special structure which has many attributes like its (x,y) coordinates, size of the meaningful neighbourhood, angle which specifies its orientation, response that specifies strength of keypoints etc. </li>
-                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html">FLANN</a> Matcher :- FLANN stands for Fast Library for Approximate Nearest Neighbors. It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For FLANN based matcher, we need to pass two dictionaries which specifies the algorithm to be used, its related parameters etc. <li>
-                <li><a href="https://www.rdocumentation.org/packages/Biolinv/versions/0.1-2/topics/spatFilter">spatFilter</a> :- Filters A Set Of Points Based On A Probability Map. This function rarefies a set of points using a raster map of probabilities of a point persisting in that location.<li>
-                <li>temp_filter</li>
-                <li>Alpha beta filter</li>
+                <li> <a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html">SIFT</a> (Scale Invarient Feature Transform) :- sift.detect() function finds the keypoint in the images. You can pass a mask if you want to search only a part of image. Each keypoint is a special structure which has many attributes like its (x,y) coordinates, size of the meaningful neighbourhood, angle which specifies its orientation, response that specifies strength of keypoints etc. </li>
+                <li> <a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html">FLANN</a> Matcher :- FLANN stands for Fast Library for Approximate Nearest Neighbors. It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For FLANN based matcher, we need to pass two dictionaries which specifies the algorithm to be used, its related parameters etc. <li>
+                <li> <a href="https://www.rdocumentation.org/packages/Biolinv/versions/0.1-2/topics/spatFilter">spatFilter</a> :- Filters A Set Of Points Based On A Probability Map. This function rarefies a set of points using a raster map of probabilities of a point persisting in that location.<li>
+                <li> temp_filter</li>
+                <li> Alpha beta filter</li>
               </ul>
 
 
