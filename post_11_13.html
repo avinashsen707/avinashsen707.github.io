@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Avinash Sen - Master's Project Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="about.html">Avinash Sen</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/week_11_13.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Week 11-13</h1>
+              <h2 class="subheading">Developments on the installation of the Realsense D435. Segmentation of the data acquired from the Realsense.</h2>
+              <span class="meta">Posted by
+                <a href="about.html">Avinash Sen</a>
+                on April 06, 2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <p>This week I started with some research on the various applications of bin-picking in the industry nowadays 
+                and continue reading other academic papers on the different processes utilized to segment the Data acquired 
+              by the RGB_D sensors. I also studied some algorithms utilized for object detection from <a href="https://docs.opencv.org/master/d9/df8/tutorial_root.html">Open CV Library</a> and for filtering point clouds from the <a href="http://pointclouds.org/">Point Cloud Library</a>. </p>
+              
+              <p>Apart from this, these week was specially marked by some developments on the Installation of the hardware and acquisition and processing of data.</p>
+              
+              <font size="6"><b>Realsense</b></font>
+              
+              <p>In order to decide the correct position to install the Realsense, I tried some frames for the different possible positions of the camera sensor on the robot, and then finalised the position for the camera sensor to be attached.</p>
+
+              <p><b>Final Position to Install - </b>Realsense with 6 degrees of freedom.</p>
+              <p><img class="img-fluid" src="img/install.png" alt=""></p>
+
+              <p>Afterwards I began to segment the sensor data, for the detection of a simple object, a box. Then  
+               created a launch file to run all the necessary programs for the visualization of the results. 
+               I started by eliminating parts of the non featured points, in order to simplify and keep only the points that represent the objects.
+              The algorithm and filters used where the following:</p>
+              <ul>
+                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html">SIFT</a> (Scale Invarient Feature Transform) :- sift.detect() function finds the keypoint in the images. You can pass a mask if you want to search only a part of image. Each keypoint is a special structure which has many attributes like its (x,y) coordinates, size of the meaningful neighbourhood, angle which specifies its orientation, response that specifies strength of keypoints etc. </li>
+                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html">FLANN</a> Matcher :- FLANN stands for Fast Library for Approximate Nearest Neighbors. It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For FLANN based matcher, we need to pass two dictionaries which specifies the algorithm to be used, its related parameters etc. <li>
+                <li><a href="https://www.rdocumentation.org/packages/Biolinv/versions/0.1-2/topics/spatFilter">spatFilter</a> :- Filters A Set Of Points Based On A Probability Map. This function rarefies a set of points using a raster map of probabilities of a point persisting in that location.<li>
+                <li>temp_filter</li>
+                <li>Alpha beta filter</li>
+              </ul>
+
+
+              <!-- Pager -->
+              <div class="clearfix">
+                  <a class="btn btn-primary float-left" href="post_8_10.html">&larr;Previous Week </a>
+                  <a class="btn btn-primary float-right" href="post_14_16.html">Next Week &rarr;</a>
+                </div>              
+            </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <!-- <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li> -->
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright 2020 &copy; avinashsen707.github.io</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
