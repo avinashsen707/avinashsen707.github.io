@@ -76,7 +76,7 @@
                 and continue reading other academic papers on the different processes utilized to segment the Data acquired 
               by the RGB_D sensors. I also studied some algorithms utilized for object detection from <a href="https://docs.opencv.org/master/d9/df8/tutorial_root.html">Open CV Library</a> and for filtering point clouds from the <a href="http://pointclouds.org/">Point Cloud Library</a>. </p>
               
-              <p>Apart from this, these week was specially marked by some developments on the Installation of the hardware and acquisition and processing of data.</p>
+              <p>Apart from this, these week was specially marked by some developments on the Installation of the hardware, acquisition and processing of data.</p>
               
               <font size="6"><b>Realsense</b></font>
               
@@ -90,8 +90,8 @@
                I started by eliminating parts of the non featured points, in order to simplify and keep only the points that represent the objects.
               The algorithm and filters used where the following:</p>
               <ul>
-                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html">SIFT</a> (Scale Invarient Feature Transform) :- sift.detect() function finds the keypoint in the images. You can pass a mask if you want to search only a part of image. Each keypoint is a special structure which has many attributes like its (x,y) coordinates, size of the meaningful neighbourhood, angle which specifies its orientation, response that specifies strength of keypoints etc.</li>
-                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html">FLANN</a> Matcher :- FLANN stands for Fast Library for Approximate Nearest Neighbors. It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For FLANN based matcher, we need to pass two dictionaries which specifies the algorithm to be used, its related parameters etc.</li>
+                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_sift_intro/py_sift_intro.html">SIFT (Scale Invarient Feature Transform)</a> :- sift.detect() function finds the keypoint in the images. You can pass a mask if you want to search only a part of image. Each keypoint is a special structure which has many attributes like its (x,y) coordinates, size of the meaningful neighbourhood, angle which specifies its orientation, response that specifies strength of keypoints etc.</li>
+                <li><a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_matcher/py_matcher.html">FLANN Matcher</a> :- FLANN stands for Fast Library for Approximate Nearest Neighbors. It contains a collection of algorithms optimized for fast nearest neighbor search in large datasets and for high dimensional features. For FLANN based matcher, we need to pass two dictionaries which specifies the algorithm to be used, its related parameters etc.</li>
                 <li><a href="https://www.rdocumentation.org/packages/Biolinv/versions/0.1-2/topics/spatFilter">spatFilter</a> :- Filters A Set Of Points Based On A Probability Map. This function rarefies a set of points using a raster map of probabilities of a point persisting in that location.</li>
                 <li>temp_filter</li>
                 <li>Alpha beta filter</li>
