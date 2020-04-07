@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Avinash Sen - Master's Project Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="about.html">Avinash Sen</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/week_17_18.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Week 17-18</h1>
+              <h2 class="subheading">Presentation, Continuation pf State of the art</h2>
+              <span class="meta">Posted by
+                <a href="about.html">Avinash Sen</a>
+                on April 08, 2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <p><b>Presentation.</b></p>
+              <p>On November 22nd, we had our Second NCRAI Meeting, in which every member of the <a href="http://gectcr.ac.in/">NCRAI</a> 
+                had to present their project status and remaining tasks for this semester.</p>
+              <p>Therefore part of this week was dedicated for the preparation of my presentation.
+                After the Presentation, The Review panel gave suggestions for my prject and asked to look into Machine learning frameworks for my object detection and pose estimation.
+              </p>
+              <p>
+                <iframe width="640" height="360"
+                src="https://www.youtube.com/embed/7tN30m5h8tU?autoplay=1&loop=1&playlist=7tN30m5h8tU">
+                </iframe>
+              </p> 
+                
+              <p><b>Continuation State of the art</b></p>
+              <p>Recently, the ﬁeld of computer vision saw major breakthroughs in the classiﬁcation and detection tasks due to the developments of deep learning and convolutional neural networks (CNN).These advances led to increased employment of convolutional neural networks for solving the industrial and academical problems. Despite the popularity of CNNs, they have not yet been widely applied for the bin picking task. Some of the applications have been described in <a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=bin+picking+deep+learning&btnG=&oq=bin+picking+deep+le">Papers and thesis on this subject</a></p>
+              <p>In a paper, CNN is used to segment an object in an RGBD image(a color image with an additional depth channel), which is followed by shape matching of the segmented part and the known 3D model, which is carried out with iterative closest point and 3D Match. Another application is presented in an paper as, where the task of 3D pose estimation is divided into two parts: ﬁrst, a descriptor of an image patch is generated; and second, the nearest neighbor search is used to determine the orientation and class of the object presented in the image.
+                The descriptor is generated in such a way that similar image patches are described by similar vectors (whose absolute diﬀerence is a small value), and this allows creating a database of images of objects observed from diﬀerent positions, and determine the orientation of an object in a test image as the nearest neighbor (by comparing the descriptor vectors) in the database.</p>
+              <p><img class="img-fluid" src="img/deep1.png" alt=""></p>
+              <p>The task of creating a descriptor for an image patch (RBG or RGBD) is handled by a convolutional neural network. An advanced grasping system is described in a conference.
+                Here, learning of the grasping behavior is handled in an end-to-end manner, without an intermediate representation of the object pose. Learning the grasping model in this way is conceptually elegant, but is unfeasible for many researchers because of the cost of the equipment (multiple robotic manipulators are used for learning).</p>
+              <p><img class="img-fluid" src="img/deep2.png" alt=""></p>
+              <p>Computer vision is a part of computer science that deals with image analysis for obtaining high-level knowledge of the image content. Computer vision methods play an important role in the developed framework, as images are used to determine the current state, and this estimate is then used to guide the robot for bin picking.</p>
+              <p>Machine learning is widely used in computer vision. It is a technology that gives computers the ability to make decisions by learning an appropriate model of a given task based on data instead of explicitly programming the behavior of the system.</p>
+              <p>Object detection is a common problem in computer vision. This is the task of ﬁnding a region in an image where the target object is localized. The region is usually deﬁned by a rectangular area, which is also commonly called a bounding box.</p>
+
+              <!-- Pager -->
+              <div class="clearfix">
+                <a class="btn btn-primary float-left" href="post_14_16.html">&larr;Previous Week </a>
+                <a class="btn btn-primary float-right" href="post_19_21.html">Next Week &rarr;</a>
+              </div>
+                
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <!-- <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li> -->
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright 2020 &copy; avinashsen707.github.io</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
