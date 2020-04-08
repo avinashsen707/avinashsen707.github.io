@@ -148,9 +148,25 @@
              </center>
             </p>
 
-            <font size="6"><b>Continuation for the state of the art</b></font>
-
-
+            <p><font size="6"><b>Continuation for the state of the art</b></font></p>
+            <p>While deep neural networks have been successfully applied to the problem of object detection in 2D, they have only recently begun to be applied to 3D object detection and pose estimation.
+              Unlike 2D object detection,it is prohibitive to manually label data for 3D detection. Dueto this difﬁculty of collecting sufﬁciently large amounts of labeled training data,
+              such approaches are typically trained on real data that are highly correlated with the test data (e.g., same camera, same object instances, similar lighting conditions).
+              As a result, one challenge of existing approaches is generalizing to test data that are signiﬁcantly different from the training set.
+            </p>
+            <p>
+              Synthetic data is a promising alternative for training such deep neural networks, capable of generat- ing an almost unlimited amount of pre-labeled training data with little effort.
+              Synthetic data comes with its own problems, however. Chief among these is the reality gap, that is, the fact that networks trained on synthetic data usually do not perform well on real data without additional ﬁne-tuning or
+              othertricks. A recently proposed solution to this problem is domain randomization,in which the training data is randomized in non-realistic ways so that,
+              at test time, real data appears to the network as simply another variation. Domain randomization has proved successful at detecting colored geometric shapes on a table,
+              ﬂying a quadcopter indoors, or learning visuomotor control for reaching or pick-and-place of a brightly colored cube.
+            </p>
+            <p>
+              <center>
+                <img src="img/domain.png" alt="" width="100%" height="100%"/>
+              </center>
+            </p>
+            
             <!-- Pager -->
               <div class="clearfix">
                 <a class="btn btn-primary float-left" href="post_17_18.html">&larr;Previous Week </a>
