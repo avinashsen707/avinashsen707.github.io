@@ -80,18 +80,18 @@
             
             <p>
               After analyzing all the positions of the Realsense on the robot, I selected the most adequate one  
-              which I believe is the position in which it as 6 degrees of freedom and its located on the side of the robot's gripper. 
+              which I believe is the position in which it has 6 degrees of freedom and its located on the side of the robot's gripper. 
               To install the Realsense in the robot it was necessary to design a support. 
-              To do so, this week I started by modeling a structure that could be screwed to one of the gripper, represented below.
-              After the manufacture of the support the Realsense was correctly installed.
+              To do so, this week was started by modeling a structure that could be screwed to one of the gripper, represented below.
+              After the manufacturing of the support the Realsense was correctly installed.
             </p>
             
             <center>
               <p><img src="img/support.jpg" alt="" width="70%" height="70%"/></p>
             </center>
 
-            <p>Now, with the Realsense properly installed, it is fundamental to calibrate its extrinsic
-              parameters, task which I will continue to do next weeks. 
+            <p>Now, with the Realsense properly installed, it is fundamental to calibrate its Extrinsic
+              parameters, task which I will continue to do in next weeks. 
             </p>
             
             <font size="6"><b>Robot Aubo-i5</b></font>
@@ -106,12 +106,13 @@
             </p>
 
             <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch binpicking_system robot_state_visualize.launch</pre></div>
-            
-            <center>
+            <p>
+             <center>
               <iframe width="640" height="360"
                  src="https://www.youtube.com/embed/cO_H4E0eURA?autoplay=1&loop=1&playlist=cO_H4E0eURA">
               </iframe>
-            </center>
+             </center>
+            </p>
 
             <p>By moving the end effector closer to the table I was able to determine the difference in the Z axis
               between the referencial of the the tip of the gripper and the end of the robot. This process 
@@ -119,7 +120,7 @@
             </p>
 
             <center>
-              <p><img src="img/gripper.png" alt="" width="100%" height="100%"/></p>
+              <p><img src="img/gripper.png" alt="" width="70%" height="70%"/></p>
             </center>
 
             <p>This way the origin of the referencial of the end of the gripper was represented with an offset of 26mm.
@@ -141,12 +142,13 @@
               By running the next command I am able to run a program that moves the robot to a desired joint or cartesian position.
             </p>
             <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">rosrun aubo_control aubo_control</pre></div>
-            
-            <center>
+            <p>
+             <center>
               <iframe width="640" height="360"
                 src="https://www.youtube.com/embed/dbz3gM8Y-Dw?autoplay=1&loop=1&playlist=dbz3gM8Y-Dw">
               </iframe>
-            </center>
+             </center>
+            </p>
 
             <!-- Pager -->
               <div class="clearfix">
