@@ -114,31 +114,29 @@
              </center>
             </p>
 
-            <p>By moving the end effector closer to the table I was able to determine the difference in the Z axis
-              between the referencial of the the tip of the gripper and the end of the robot. This process 
-              is represented in the pictures below. 
+            <p>By moving the end effector closer to the table, I was able to determine the difference in the Z-axis
+              between the referencial of the the tip of the gripper and the end of the robot. 
             </p>
 
             <center>
               <p><img src="img/gripper.png" alt="" width="70%" height="70%"/></p>
             </center>
 
-            <p>This way the origin of the referencial of the end of the gripper was represented with an offset of 26mm.
-            Knowing this I was now able to design a simple gripper to represent the real one. By incorporating it in the urdf files
-            and the description of the last coordinate system, I could visualize the robot, the gipper in the respective position and 
-            all the coordinate systems so far, using the next command.
+            <p>By This way, the origin of the referencial end of the gripper was represented with an offset of 26mm.
+            Knowing this, I was now able to design a simple gripper to represent the real one. By incorporating it in the urdf files
+            and the description of the last coordinate system, I could visualize the robot, the gipper in the respective position. The complete 
+            coordinate systems so far visualized by using the following command.
             </p>
             
             <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch binpicking_system globalvisualization.launch</pre></div>
             
             <center>
-              <p><img src="img/robot_rviz.jpg" alt="" width="100%" height="100%"/></p>
+              <p><img src="img/robot_rviz.jpg" alt="" width="70%" height="70%"/></p>
             </center>
               
-            <p>Given the fact that it is necessary to move the robot to positions with accuracy in oder to 
+            <p>Given the fact that, it is necessary to move the robot to positions with accuracy in oder to 
               calibrate the camera sensor and to move to the exact centroid of an object, detected by the program, I
-              implemented a library developed by an ex-student. João Peixoto developed a library that allows you to communicate
-              with Fanuc robot using a TCP/IP connection and send and receive commands in the robCOMM language.    
+              used a code developed by Aubo developers.    
               By running the next command I am able to run a program that moves the robot to a desired joint or cartesian position.
             </p>
             <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">rosrun aubo_control aubo_control</pre></div>
