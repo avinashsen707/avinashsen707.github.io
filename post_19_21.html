@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Avinash Sen - Master's Project Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="about.html">Avinash Sen</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/week_19_21.png')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Week 19-21 </h1>
+              <h2 class="subheading">Support for the Realsense. Installation of the Aubo-i5's Moveit! Package and coordinate Transformation.</h2>
+              <span class="meta">Posted by
+                <a href="about.html">Joana Mota</a>
+                on April 09, 2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+            <font size="6"><b>Realsense</b></font>
+            
+            <p>
+              After analyzing all the positions of the Realsense on the robot, I selected the most adequate one  
+              which I believe is the position in which it as 6 degrees of freedom and its located on the side of the robot's gripper. 
+              To install the Realsense in the robot it was necessary to design a support. 
+              To do so, this week I started by modeling a structure that could be screwed to one of the gripper, represented below.
+              After the manufacture of the support the Realsense was correctly installed.
+            </p>
+            
+            <center>
+              <p><img src="img/support.jpg" alt="" width="70%" height="70%"/></p>
+            </center>
+
+            <p>Now, with the Realsense properly installed, it is fundamental to calibrate its extrinsic
+              parameters, task which I will continue to do next weeks. 
+            </p>
+            
+            <font size="6"><b>Robot Aubo-i5</b></font>
+            
+            <p>In order to know all the transformations between the coordinate systems of the Realsense, 
+              the robot and the gripper, I started by including the URDF files of the Aubo-i5 Cobot to have 
+              all the coordinate frames of the joints. The referential of the base of the robot 
+              was defined as the global coordinate system. Knowing that the URDF files of the aubo-i5 robot does not incorporate
+              the coordinate frame of the gripper center point <a href="https://www.aubo.cz/download/dfbb6092c5064c2e2f44be5c06cafe81/912535945-auborpereferenceguide-181011.pdf">(TCP)</a>, I had to determine the exact length of the gripper.
+              To do so, I visualized the values of the joints, and its coordinate systems, of the real robot in Rviz 
+              with the following command. 
+            </p>
+
+            <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch binpicking_system robot_state_visualize.launch</pre></div>
+            
+            <center>
+              <iframe width="640" height="360"
+                 src="https://www.youtube.com/embed/cO_H4E0eURA?autoplay=1&loop=1&playlist=cO_H4E0eURA">
+              </iframe>
+            </center>
+
+            <p>By moving the end effector closer to the table I was able to determine the difference in the Z axis
+              between the referencial of the the tip of the gripper and the end of the robot. This process 
+              is represented in the pictures below. 
+            </p>
+
+            <center>
+              <p><img src="img/gripper.png" alt="" width="100%" height="100%"/></p>
+            </center>
+
+            <p>This way the origin of the referencial of the end of the gripper was represented with an offset of 26mm.
+            Knowing this I was now able to design a simple gripper to represent the real one. By incorporating it in the urdf files
+            and the description of the last coordinate system, I could visualize the robot, the gipper in the respective position and 
+            all the coordinate systems so far, using the next command.
+            </p>
+            
+            <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch binpicking_system globalvisualization.launch</pre></div>
+            
+            <center>
+              <p><img src="img/robot_rviz.jpg" ></p>
+            </center>
+              
+            <p>Given the fact that it is necessary to move the robot to positions with accuracy in oder to 
+              calibrate the camera sensor and to move to the exact centroid of an object, detected by the program, I
+              implemented a library developed by an ex-student. João Peixoto developed a library that allows you to communicate
+              with Fanuc robot using a TCP/IP connection and send and receive commands in the robCOMM language.    
+              By running the next command I am able to run a program that moves the robot to a desired joint or cartesian position.
+            </p>
+            <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">rosrun aubo_control aubo_control</pre></div>
+            
+            <center>
+              <iframe width="640" height="360"
+                src="https://www.youtube.com/embed/dbz3gM8Y-Dw?autoplay=1&loop=1&playlist=dbz3gM8Y-Dw">
+              </iframe>
+            </center>
+
+            <!-- Pager -->
+              <div class="clearfix">
+                <a class="btn btn-primary float-left" href="post_17_18.html">&larr;Previous Week </a>
+                <a class="btn btn-primary float-right" href="post_22_23.html">Next Week &rarr;</a>
+              </div>            
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <!-- <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li> -->
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright 2020 &copy; avinashsen707.github.io</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
