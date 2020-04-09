@@ -79,8 +79,10 @@
             <p>In this past two weeks I calibrated the intrinsic parameters of the Realsense and created a launch file that runs all the necessary programs to process and visualize the RGB_D Data acquired
               by the Realsense. This launch file already includes the respective .yaml files to calibrate the rgb and the depth of the sensor.
             </p>
-            <p><img class="img-fluid" src="img/int_calib.png" alt=""></p>
-
+            <center>
+              <p><img class="img-fluid" src="img/int_calib.png" alt=""></p>
+            </center>
+            
             <font size="6"><b>Processing the RGB_D Data</b></font>
             <p>Using the recorded rosbag I continued to process the RGB_D data based on the feature points trained by SIFT and FLANN matcher. After that i draw a 2D bounding box around the object trained by finding the corner pixel values of feature points. Then, i was able to determine the centroid of a simple box and its normal.</p>
             <p><img src="img/centroid.png" alt="" width="100%" height="100%"/></p>
