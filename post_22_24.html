@@ -79,18 +79,18 @@
             <font size="6"><b>Calibration</b></font>
             <p>
               The calibration of the camera sensor was carried on with the determination of the transformation from 
-              the coordinate system of the centre of the gripper to the coordinate system of the sender of the laser.
-              The process of determining, if the angle of the camera changes with the perpendicular movement of the robot's 
-              end effector was redone with more precision. 
-              Afterwards the translation of the X,Y and Z was calculated. To calculate the exact diference from the tip of the gripper to the laser in the Z-axis
-              I gathered some readings from the camera when it is vertically pointing to the table, thus knowing the difference to the base 
-              of the robot. Then those where compared with the Z-coordinate of the end effector read in the RVIZ. After gathering data
+              the coordinate system of the centre of the gripper to the camera.
+              The process of determining was redone with more precision, if the angle of the camera changes with the perpendicular movement of the robot's 
+              end effector. 
+              Afterwards the translation of the X,Y and Z was calculated. To calculate the exact diference from the tip of the gripper to the camera in the Z-axis,
+              I gathered some readings from the camera when it is vertically pointing to the table. Thishelp in  knowing the difference to the base 
+              of the robot. Then those were compared with the Z-coordinate of the end effector read in the RVIZ. After gathering data
               for different distances the average was calculated.
             </p>
             <p>
               <center>
                 <p>
-                  <img src="img/calib_ext.png" alt="" width="70%" height="70%"/>
+                  <img src="img/calib_ext.png" alt="" width="100%" height="100%"/>
                 </p>
               </center>
             </p>
@@ -98,12 +98,12 @@
             <p> 
               Having already the transformation the URDF was changed, by altering the binpicking_robot_macro.xacro file and adding the 
               binpicking_gripper_macro.xacro, in order to incorporate the 
-              coordinate system of the sender of the laser sensor. The .STL file of the device was also included for a better visualization as shown above.
+              coordinate system of the sender of the laser sensor. The (.STL) file of the device was also included for a better visualization as shown above.
             </p>
             
             <font size="6"><b>Realsense</b></font>
              <p>
-              The calibration of the Kinect was my next step in this week. To do so the  
+              The calibration of the Realsense was my next step in this week. To do so the  
               <a href="http://wiki.ros.org/visp_hand2eye_calibration">visp_hand2eye_calibration ROS package</a>
               was used. This package is used to estimate the camera position with respect to its effector (the robot arm)
               using the ViSP library. To compute the relative transformation between the the camera and the hand it is necessary
