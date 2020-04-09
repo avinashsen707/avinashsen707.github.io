@@ -76,26 +76,21 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
 
-            <font size="6"><b>Realsense</b></font>
-            
+            <font size="6"><b>Support for Realsense</b></font>            
             <p>
               After analyzing all the positions of the Realsense on the robot, I selected the most adequate one  
               which I believe is the position in which it has 6 degrees of freedom and its located on the side of the robot's gripper. 
               To install the Realsense in the robot it was necessary to design a support. 
               To do so, this week was started by modeling a structure that could be screwed to one of the gripper, represented below.
               After the manufacturing of the support the Realsense was correctly installed.
-            </p>
-            
+            </p>            
             <center>
               <p><img src="img/support.jpg" alt="" width="70%" height="70%"/></p>
             </center>
-
             <p>Now, with the Realsense properly installed, it is fundamental to calibrate its Extrinsic
               parameters, task which I will continue to do in next weeks. 
-            </p>
-            
-            <font size="6"><b>Robot Aubo-i5</b></font>
-            
+            </p>            
+            <font size="6"><b>Robot Aubo-i5</b></font>            
             <p>In order to know all the transformations between the coordinate systems of the Realsense, 
               the robot and the gripper, I started by including the URDF files of the Aubo-i5 Cobot to have 
               all the coordinate frames of the joints. The referential of the base of the robot 
@@ -104,7 +99,6 @@
               To do so, I visualized the values of the joints, and its coordinate systems, of the real robot in Rviz 
               with the following command. 
             </p>
-
             <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch binpicking_system robot_state_visualize.launch</pre></div>
             <p>
              <center>
@@ -113,21 +107,18 @@
               </iframe>
              </center>
             </p>
-
             <p>By moving the end effector closer to the table, I was able to determine the difference in the Z-axis
               between the referencial of the the tip of the gripper and the end of the robot. 
             </p>
-
             <center>
               <p><img src="img/gripper.png" alt="" width="70%" height="70%"/></p>
             </center>
-
             <p>By This way, the origin of the referencial end of the gripper was represented with an offset of 26mm.
             Knowing this, I was now able to design a simple gripper to represent the real one. By incorporating it in the urdf files
             and the description of the last coordinate system, I could visualize the robot, the gipper in the respective position. The complete 
             coordinate systems so far visualized by using the following command.
             </p>
-            
+
             <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch binpicking_system globalvisualization.launch</pre></div>
             
             <center>
@@ -147,7 +138,6 @@
               </iframe>
              </center>
             </p>
-
             <p><font size="6"><b>Continuation of state of the art</b></font></p>
             <p>While deep neural networks have been successfully applied to the problem of object detection in 2D, they have only recently begun to be applied to 3D object detection and pose estimation.
               Unlike 2D object detection,it is prohibitive to manually label data for 3D detection. Dueto this difﬁculty of collecting sufﬁciently large amounts of labeled training data,
