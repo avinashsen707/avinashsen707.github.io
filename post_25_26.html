@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Avinash Sen - Master's Project Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="about.html">Avinash Sen</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/week_25_26.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Week 25-26</h1>
+              <h2 class="subheading">Continuation of State of the art. DOPE (Deep Object Pose Estimation) code implementing in ROS Enviornment.</h2>
+              <span class="meta">Posted by
+                <a href="about.html">Avinash Sen</a>
+                on April 11, 2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              <p><font size="6"><b>Continuation of state of the art</b></font></p>
+              <p>On the last weeks, i learned abot the domain randomization, in which the training data is randomized in non-realistic ways so that,
+                at test time, real data appears to the net- work as simply another variation. Regarding this in a paper, i explored a powerful complement to domain randomization (DR) namely, using photorealistic data.
+                They show that a simple combination of DR data with such photorealistic data yields sufﬁcient variation and complexity to train a deep neural network that is then able to operate on real data without any ﬁne-tuning.
+                Additionally, their synthetically trained network generalizes well to a variety of real-world scenarios, including various backgrounds and extreme lighting conditions.
+              </p>
+              <p>
+                <center>
+                  <p><img class="img-fluid" src="img/dope_sample.png" alt=""></p>
+                </center> 
+              </p>
+              <p>
+                Their contributions are thus as follows:
+                <li>A one shot,deep neural network based system that infers, in near real time, the 3D poses of known objects in clutter from a single RGB image without requiring post-alignment.
+                  This system uses a simple deep network architecture, trained entirely on simulated data, to infer the 2D image coordinates of projected 3D bounding boxes, followed by perspective-n-point (PnP)
+                </li>
+                <li>Demonstration that combining both non-photorealistic (domain randomized) and photo- realistic synthetic data for training robust deep neural networks successfully bridges the reality gap for real-world applications,
+                  achieving performance comparable with state-of- the-art networks trained on real data.
+                </li>
+                <li>
+                  An integrated robotic system that shows the estimated poses are of sufﬁcient accuracy to solve real-world tasks such as pick-and-place, object handoff, and path following.
+                </li>
+              </p>
+              <p>Now the authors of this paper produced this pose estimation algorithm which is called DOPE which stands for Deep object Pose Estimation.
+                This is a state of art pose estimation and we decided to use this mainly for our research. So that we can focus on eliminating other problems not just about the concept of pose estimation and its mathematics.
+              </p>
+              <p>
+                <center>
+                  <iframe width="640" height="360"
+                   src="https://www.youtube.com/embed/yVGViBqWtBI?autoplay=1&loop=1&playlist=yVGViBqWtBI">
+                  </iframe>
+                </center>                
+              </p> 
+                
+              <p><font size="6"><b>DOPE (Deep Object Pose Estimation) code implementing in ROS Enviornment</b></font></p>
+              <p>They propose a two-step solution to address the problem of detecting and estimating the 6-DoF pose of all instances of a set of known household objects from a single RGB image first,
+                a deep neural network estimates belief maps of 2D keypoints of all the objects in the image coordinate system. Secondly, peaks from these belief maps are fed to a standard perspective-n-point (PnP) algorithm to estimate the 6-DoF pose of each object instance
+              </p>
+              <p>This <a href="https://github.com/NVlabs/Deep_Object_Pose"></a> is the official DOPE ROS package for detection and 6-DoF pose estimation of known objects from an RGB camera.
+                The network has been trained default on the following YCB objects: cracker box, sugar box, tomato soup can, mustard bottle, potted meat can, and gelatin box.
+              </p>
+                           
+              <p>Followed the instructions and installed successfullyin my system.</p>
+              <p><img class="img-fluid" src="img/dope_install.png" alt=""></p>
+
+              <!-- Pager -->
+              <div class="clearfix">
+                <a class="btn btn-primary float-left" href="post_22_24.html">&larr;Previous Week </a>
+                <a class="btn btn-primary float-right" href="post_27_29.html">Next Week &rarr;</a>
+              </div>
+                
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <!-- <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li> -->
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/avinashsen707">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright 2020 &copy; avinashsen707.github.io</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>
