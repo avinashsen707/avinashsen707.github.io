@@ -7,7 +7,7 @@ By synthetically combining object models and backgrounds of complex composition 
 
 ## Preview
 
-[![Clean Blog Preview](https://github.com/avinashsen707/avinashsen707.github.io/blob/master/img/pagepreview.png)](https://blackrockdigital.github.io/startbootstrap-clean-blog/)
+[![Clean Blog Preview](https://github.com/avinashsen707/avinashsen707.github.io/blob/master/img/pagepreview.png)](https://avinashsen707.github.io/)
 
 **[View Live Preview](https://avinashsen707.github.io/)**
 
