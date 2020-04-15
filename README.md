@@ -1,4 +1,4 @@
-# [Start Bootstrap - Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/)
+# [Bin-Picking System - Master's Project Blog](https://avinashsen707.github.io/)
 
 [Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
 
@@ -6,7 +6,7 @@
 
 [![Clean Blog Preview](https://github.com/avinashsen707/avinashsen707.github.io/blob/master/img/pagepreview.png)](https://blackrockdigital.github.io/startbootstrap-clean-blog/)
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-clean-blog/)**
+**[View Live Preview](https://avinashsen707.github.io/)**
 
 ## Status
 
