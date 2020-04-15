@@ -1,10 +1,9 @@
 # [Bin-Picking System - Master's Project Blog](https://avinashsen707.github.io/)
+
 ## Development and Testing of a Deep Learning based Robotic Bin Picking System
 The technique used by a robot to grab objects that are randomly placed inside a box or a pallet is called bin picking.
 My purpose with this project is to develop a system that is based on learning the appearance model of objects using convolutional neural networks (CNN) is proposed.
 By synthetically combining object models and backgrounds of complex composition and high graphical quality, we are able to generate photo realistic images with accurate annotated 3D pose for all objects in our custom created dataset. Using this network, we can estimate the object poses with sufficient accuracy for real world semantic grasping in a cluttered bin by real robot.
-
-[Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
 
 ## Preview
 
@@ -21,6 +20,8 @@ By synthetically combining object models and backgrounds of complex composition 
 [![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-clean-blog/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-clean-blog?type=dev)
 
 ## Download and Installation
+
+[Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
 
 To begin using this template, choose one of the following options to get started:
 * [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/)
