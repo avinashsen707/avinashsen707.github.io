@@ -59,11 +59,11 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
-              <h1>Week 27-29 </h1>
-              <h2 class="subheading">DOPE code Training and Testing. Detection by 3D bounding box and Pose Output of Demo object.</h2>
+              <h1>Week 46-48 </h1>
+              <h2 class="subheading">Creation of 3D model, custom dataset for training and testing and Implementing in ROS Framework.</h2>
               <span class="meta">Posted by
                 <a href="about.html">Avinash Sen</a>
-                on April 12, 2020</span>
+                on June 20, 2020</span>
             </div>
           </div>
         </div>
@@ -75,61 +75,89 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <font size="6"><b>DOPE code Training and Testing for Demo object</b></font>
+            <font size="6"><b>Creation of Custom objects using the Blendor tool</b></font>
             <p>
-              This network was implemented using PyTorch v0.4. The VGG-19 feature extractions were taken from publicly available trained weights in torchvision open models.
-              The networks were trained for 60 epochs with a batchsize of 16 for this Demo object. Adam was used as the optimizer with learning rate set at 0.0001.
-              The system was trained on an Dell Precision 7820 workstation (containing NVIDIA P4000 16GB GPU), and testing used same.
+              Make a 3D model in solidworks or CAD etc.,then import a 3D model in Blender (.stl .dae ...) and export it as a fbx file then import that fbx file into UE4, fbx file is work in UE4.
             </p>
-            <p>For more, Download the Dataset from <a href="https://research.nvidia.com/publication/2018-06_Falling-Things">https://research.nvidia.com/publication/2018-06_Falling-Things</a> and
-              train the objects by <a href="https://github.com/NVlabs/Deep_Object_Pose/blob/master/scripts/train.py">https://github.com/NVlabs/Deep_Object_Pose/blob/master/scripts/train.py</a> to get respective weights.
-            </p>
-            <center>
-              <p><img class="img-fluid" src="img/training.jpg" alt=""></p>
-            </center>
-            <p><b>Experimental Setup for Testing the Demo object:</b></p>
+            <p>
+              For more, __Download__<a href="https://www.blender.org/">[[Blender]]__</a>              
+            </p>            
+            <p><b>Blender Setup for Creating the 3D Model object:</b></p>
             <p>
               <center>
                 <iframe width="640" height="360"
-                 src="https://www.youtube.com/embed/7gsZfrnAFLY?autoplay=1&loop=1&playlist=7gsZfrnAFLY">
+                 src="https://www.youtube.com/embed/bK2NJmRyP6g?autoplay=1&loop=1&playlist=bK2NJmRyP6g">
                 </iframe>
               </center>
             </p>
                         
-            <font size="6"><b>Detection by 3D bounding box and Pose Output of Demo object</b></font>
+            <font size="6"><b>Creation of Custom dataset using Nvidia Deep learning Data Synthesizer (NDDS) software in Unreal Engine (UE4) and Training in GPU.</b></font>
             <p>
-              After the network has processed an image, it is necessary to extract the individual objects from the belief maps. 
+              STEP 1 - Download the NDDS Documentation, wget <a href="https://github.com/NVIDIA/Dataset_Synthesizer/blob/master/Documentation/NDDS.pdfhttps://github.com/NVIDIA/Dataset_Synthesizer/blob/master/Documentation/NDDS.pdf">(NDDS) Documentation</a>
             </p>
             
-            <p><b>Detection of the Demo Object:</b>
-              This approach relies on a simple postprocessing step that searches for local peaks in the belief maps above a threshold,
-              followed by a greedy assignment algorithm that associates projected vertices to detected centroids. For each vertex,
-              this latter step compares the vector ﬁeld evaluated at the vertex with the direction from the vertex to each centroid,
-              assigning the vertex to the closest centroid within some angular threshold of the vector. 
+            <p><b>STEP 2 - Installing & RUN the NDDS</b>
+              Open the Unreal Editor with the Dataset_Synthesizer/Source/NDDS.uproject, 
+              a default level called TestCapturer will load as indicated at the top left hand corner of the 3D view port. 
+              This level has a sample scene with a basic simulation capture set up. 
             </p>
             <p>
               <center>
                 <iframe width="640" height="360"
-                 src="https://www.youtube.com/embed/kFdxqJA0BTg?autoplay=1&loop=1&playlist=kFdxqJA0BTg">
+                 src="https://www.youtube.com/embed/qrhS-UxqNlQ?autoplay=1&loop=1&playlist=qrhS-UxqNlQ">
                 </iframe>
               </center>
             </p>
-            <p><b>Pose Output of the Demo object:</b>
-              Once the vertices of each object instance have been determined, a PnP algorithm is used to retrieve the pose of the object.
-              This step uses the detected projected vertices of the bounding box, the camera intrinsics,
-              and the object dimensions to recover the ﬁnal translation and rotation of the object with respect to the camera.
-              All detected projected vertices are used, as long as at least the minimum number (four) are detected.
+            <p>
+              <b>STEP 3 - Train the Created Custom model: </b> Training code is also provided - <a href="https://github.com/avinashsen707/AUBOi5-D435-ROS-DOPE/blob/master/dope/scripts/train.py"> train.py</a>
+            </p>
+
+            <font size="6"><b>Implementation and Testing in ROS.</b></font>
+            <p><b>Running ROS master, camera node, DOPE node and rviz node:</b></p>
+            <p>
+              1. Start ROS master :
+              <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">cd ~/catkin_ws | source devel/setup.bash |  roscore</pre></div>
+              2.Start camera node (or start your own camera node)
+              <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch realsense2_camera rs_rgbd.launch  # Publishes RGB images to `/camera/color/image_raw`</pre></div>
+              3. Start DOPE node
+              <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch dope dope.launch [config:=/path/to/my_config.yaml]</pre></div>
+              4. Start rviz node
+              <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">rosrun rviz rviz</pre></div>
+              To debug in RViz, run rviz, then add one or more of the following displays:
+              <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                <pre style="margin: 0; line-height: 125%">Add > Image to view the raw RGB image or the image with cuboids overlaid |
+                  Add > Pose to view the object coordinate frame in 3D. | 
+                  Add > MarkerArray to view the cuboids, meshes etc. in 3D. | 
+                  Add > Camera to view the RGB Image with the poses and markers from above.
+                </pre>
+              </div>
             </p>
             <p>
               <center>
                 <iframe width="640" height="360"
-                 src="https://www.youtube.com/embed/cB5miHZ5tPc?autoplay=1&loop=1&playlist=cB5miHZ5tPc">
+                 src="https://www.youtube.com/embed/QKuz-MHvrPk?autoplay=1&loop=1&playlist=QKuz-MHvrPk">
                 </iframe>
               </center>
             </p>
+
+            <p><b>Debugging Object Detection on Test Dataset</b></p>
+            
             <p>
-              The network employs multiple stages to reﬁne ambiguous estimates of the 2D locations of projected vertices of each object’s 3D bounding cuboid.
-              These points are then used to predict the ﬁnal pose using PnP, assuming known camera intrinsics and object dimensions.
+              <center>
+                <iframe width="640" height="360"
+                 src="https://www.youtube.com/embed/G2MJ-pnd1hY?autoplay=1&loop=1&playlist=G2MJ-pnd1hY">
+                </iframe>
+              </center>
+            </p>
+
+            <p><b>Debugging Pose Estimation on Test Dataset</b></p>
+            
+            <p>
+              <center>
+                <iframe width="640" height="360"
+                 src="https://www.youtube.com/embed/w9m-CRJ812Y?autoplay=1&loop=1&playlist=w9m-CRJ812Y">
+                </iframe>
+              </center>
             </p>
 
             <!-- Pager -->
