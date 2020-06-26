@@ -81,14 +81,16 @@
               The description of the steps required for the development and Evaluation of the entire process is presented next; This section describes the purpose of each node, explains the connection among them all and how they communicate with each other and through each topics.
               ROS (ROBOT OPERATING SYSTEM) : It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behaviour across a wide variety of robotic platforms.
 
-              ROS contains diﬀerent distributions which are a versioned set of ROS packages. The one used in this project is the ROS Kinetic Kame.
-              We attached an Intel Realsense D435i depth camera to the 6th link of a Aubo i5 robot.
-              The workstation and the robot connected via Ethernet cable for fast communication and the rest camera was connected by USB Type–C in the drive.
+              <p>
+                ROS contains diﬀerent distributions which are a versioned set of ROS packages. The one used in this project is the ROS Kinetic Kame.
+                We attached an Intel Realsense D435i depth camera to the 6th link of a Aubo i5 robot.
+                The workstation and the robot connected via Ethernet cable for fast communication and the rest camera was connected by USB Type–C in the drive.
+              </p>
             
               Download : <a href="https://github.com/avinashsen707/AUBOi5-D435-ROS-DOPE">Link____</a>
             </p>
 
-            <p><b>Experimental Setup for Testing the Demo object:</b></p>
+            <p><b>Experimental Setup :</b></p>
             <p>
               <center>
                 <iframe width="640" height="360"
@@ -134,7 +136,8 @@
               For better results, we took the object cracker, almost random, at 4 various areas on a table in front of the robot, at 3 various orientations for each of the 4 places.
             </p>
             
-            <p><b>Detection of the Demo Object:</b>
+            <p>
+              <p><b>Detection</b></p>
               This approach relies on a simple postprocessing step that searches for local peaks in the belief maps above a threshold,
               followed by a greedy assignment algorithm that associates projected vertices to detected centroids. For each vertex,
               this latter step compares the vector ﬁeld evaluated at the vertex with the direction from the vertex to each centroid,
@@ -147,7 +150,8 @@
                 </iframe>
               </center>
             </p>
-            <p><b>Pose Output of the Demo object:</b>
+            <p>
+              <p><b>Pose Output</b></p>
               Once the vertices of each object instance have been determined, a PnP algorithm is used to retrieve the pose of the object.
               This step uses the detected projected vertices of the bounding box, the camera intrinsics, and the object dimensions to recover the ﬁnal translation and rotation of the object with respect to the camera.
               All detected projected vertices are used, as long as at least the minimum number (four) are detected.
