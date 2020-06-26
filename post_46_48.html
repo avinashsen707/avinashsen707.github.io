@@ -53,17 +53,17 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/week_46_48.png')">
+    <header class="masthead" style="background-image: url('img/week_27_29.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
               <h1>Week 46-48 </h1>
-              <h2 class="subheading">Creation of 3D model, custom dataset for training and testing and Implementing in ROS Framework.</h2>
+              <h2 class="subheading">System Integration, Experiments and Results.</h2>
               <span class="meta">Posted by
                 <a href="about.html">Avinash Sen</a>
-                on June 20, 2020</span>
+                on June 21, 2020</span>
             </div>
           </div>
         </div>
@@ -75,50 +75,28 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <font size="6"><b>Creation of Custom objects using the Blender tool</b></font>
+            <font size="6"><b>Implementation in ROS Framework.</b></font>
             <p>
-              Make a 3D model in solidworks or CAD etc.,then import a 3D model in Blender (.stl .dae ...) and export it as a fbx file then import that fbx file into UE4, fbx file is work in UE4.
-            </p>
-            <p>
-              For more, __Download__<a href="https://www.blender.org/">[[Blender]]__</a>              
-            </p>            
-            <p><b>Blender Setup for Creating the 3D Model object:</b></p>
-            <p>
-              <center>
-                <iframe width="640" height="360"
-                 src="https://www.youtube.com/embed/bK2NJmRyP6g?autoplay=1&loop=1&playlist=bK2NJmRyP6g">
-                </iframe>
-              </center>
-            </p>
-                        
-            <font size="5"><b>Creation of Custom dataset using Nvidia Deep learning Data Synthesizer (NDDS) software in Unreal Engine (UE4) and Training in GPU.</b></font>
-            <p>
-              STEP 1 - Download the NDDS Documentation, wget <a href="https://github.com/NVIDIA/Dataset_Synthesizer/blob/master/Documentation/NDDS.pdfhttps://github.com/NVIDIA/Dataset_Synthesizer/blob/master/Documentation/NDDS.pdf">(NDDS) Documentation</a>
-            </p>
+              With the complete hardware calibrated, and having the objects in the workspace successfully detected, it is now possible to develop the precise bin-picking vision system.
+              The description of the steps required for the development and Evaluation of the entire process is presented next; This section describes the purpose of each node, explains the connection among them all and how they communicate with each other and through each topics.
+              ROS (ROBOT OPERATING SYSTEM) : It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behaviour across a wide variety of robotic platforms.
+
+              ROS contains diﬀerent distributions which are a versioned set of ROS packages. The one used in this project is the ROS Kinetic Kame.
+              We attached an Intel Realsense D435i depth camera to the 6th link of a Aubo i5 robot.
+              The workstation and the robot connected via Ethernet cable for fast communication and the rest camera was connected by USB Type–C in the drive.
             
-            <p>STEP 2 - Installing & RUN the NDDS :
-              Open the Unreal Editor with the Dataset_Synthesizer/Source/NDDS.uproject, 
-              a default level called TestCapturer will load as indicated at the top left hand corner of the 3D view port. 
-              This level has a sample scene with a basic simulation capture set up. 
-            </p>
-            <p>
-              <center>
-                <iframe width="640" height="360"
-                 src="https://www.youtube.com/embed/qrhS-UxqNlQ?autoplay=1&loop=1&playlist=qrhS-UxqNlQ">
-                </iframe>
-              </center>
-            </p>
-            <p>
-              STEP 3 - Train the Created Custom model: Training code is also provided - <a href="https://github.com/avinashsen707/AUBOi5-D435-ROS-DOPE/blob/master/dope/scripts/train.py"> train.py</a>
+              Download : <a href="https://github.com/avinashsen707/AUBOi5-D435-ROS-DOPE">Link____</a>
             </p>
 
-            <font size="6"><b>Implementation and Testing in ROS.</b></font>
+            <p><b>Experimental Setup for Testing the Demo object:</b></p>
             <p>
-               A package for detecting and estimating the 6- DoF pose of known objects using a novel architecture and data generation pipeline using the state of the art algorithm DOPE in Aubo i5 collaborative robot with Intel Realsense D435i camera.
-               The neural network consists several steps to reﬁne and estimates of the 2D coordinates of projected vertices of each object’s 3D bounding cuboid. These vertices are then used to output the ﬁnal pose using PnP, with known camera intrinsic and object dimensions. 
-               The neural network trained only on photorealistic data can attain state of the art results compared with a neural network trained on real world data and resulting poses are with much needed accuracy for robotic pick and place.
-               Download : <a href="https://github.com/avinashsen707/AUBOi5-D435-ROS-DOPE">Link____</a>
+              <center>
+                <iframe width="640" height="360"
+                 src="https://www.youtube.com/embed/7gsZfrnAFLY?autoplay=1&loop=1&playlist=7gsZfrnAFLY">
+                </iframe>
+              </center>
             </p>
+            
             <p><b>Running ROS master, camera node, DOPE node and rviz node:</b></p>
             <p>
               1. Start ROS master :
@@ -147,33 +125,54 @@
               </center>
             </p>
 
-            <p><b>Debugging Object Detection on Test Dataset Results :</b></p>
+            <font size="6"><b>Experiments and Results</b></font>
+            <p>
+              After the network has processed an image, it is necessary to extract the individual objects from the belief maps.
+              In order to evaluate and demonstrate the performance of the developed bin-picking vision system, several tests were taken and a demonstration was held to present the versatility of the system.
+              For this particular project, this sort of assessment could be done by evaluating the number of successes in the identiﬁcation and pose estimation of a demo object.
+
+              For better results, we took the object cracker, almost random, at 4 various areas on a table in front of the robot, at 3 various orientations for each of the 4 places.
+            </p>
             
+            <p><b>Detection of the Demo Object:</b>
+              This approach relies on a simple postprocessing step that searches for local peaks in the belief maps above a threshold,
+              followed by a greedy assignment algorithm that associates projected vertices to detected centroids. For each vertex,
+              this latter step compares the vector ﬁeld evaluated at the vertex with the direction from the vertex to each centroid,
+              assigning the vertex to the closest centroid within some angular threshold of the vector. 
+            </p>
             <p>
               <center>
                 <iframe width="640" height="360"
-                 src="https://www.youtube.com/embed/G2MJ-pnd1hY?autoplay=1&loop=1&playlist=G2MJ-pnd1hY">
+                 src="https://www.youtube.com/embed/kFdxqJA0BTg?autoplay=1&loop=1&playlist=kFdxqJA0BTg">
                 </iframe>
               </center>
             </p>
-
-            <p><b>Debugging Pose Estimation on Test Dataset Results :</b></p>
-            
+            <p><b>Pose Output of the Demo object:</b>
+              Once the vertices of each object instance have been determined, a PnP algorithm is used to retrieve the pose of the object.
+              This step uses the detected projected vertices of the bounding box, the camera intrinsics, and the object dimensions to recover the ﬁnal translation and rotation of the object with respect to the camera.
+              All detected projected vertices are used, as long as at least the minimum number (four) are detected.
+            </p>
             <p>
               <center>
                 <iframe width="640" height="360"
-                 src="https://www.youtube.com/embed/9iNDSaG5IdE?autoplay=1&loop=1&playlist=9iNDSaG5IdE">
+                 src="https://www.youtube.com/embed/cB5miHZ5tPc?autoplay=1&loop=1&playlist=cB5miHZ5tPc">
                 </iframe>
               </center>
             </p>
-            <p>The robotic manipulation is in the future scope of this project and it can be fully made into grasp the respective object from the randomly ordered bin by any robot in ROS Enviornment. </p>
+            <p>
+              The network employs multiple stages to reﬁne ambiguous estimates of the 2D locations of projected vertices of each object’s 3D bounding cuboid.
+              These points are then used to predict the ﬁnal pose using PnP, assuming known camera intrinsics and object dimensions.
 
+              The robot was programed to go to distance before grasp coordinates above the object. The prototype object detected and pose estimated successfully in various orientations.
+              We rotated the objects 6-DOF and the object detection was quite successful.
+            </p>
+                     
             <!-- Pager -->
             <div class="clearfix">
               <a class="btn btn-primary float-left" href="post_39_45.html">&larr;Previous Week </a>
               <a class="btn btn-primary float-right" href="post_49_50.html">Next Week &rarr;</a>
-            </div>            
-          
+            </div>
+
           </div>
         </div>
       </div>
