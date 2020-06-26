@@ -1,6 +1,6 @@
 # [Bin Picking System - Master's Project Blog](https://avinashsen707.github.io/)
 
-## Development and Testing of a Deep Learning based Bin Picking System
+## Development and Evaluation of a Deep Learning based Robotic Bin Picking Vision System
 The technique used by a robot to grab objects that are randomly placed inside a box or a pallet is called bin picking.
 My purpose with this project is to develop a system that is based on learning the appearance model of objects using convolutional neural networks (CNN) is proposed.
 Using PyTorch deeplearning framework, a 6DoF Poses of objects in the bin is estimated and it has experimented with the usability of depth sensing cameras in operation room lighting. Creation of the 3D object models is done using Blender tool, which is for Generating synthetic training dataset with the help of Unreal Engine(UE4) and NVidia Deep Learning Data Synthesizer(NDDS) software. By deep-learning the created model, the object poses with adequate accuracy required for semantic grasping by any robot is obtained. The overall system is implemented using ROS framework. 
