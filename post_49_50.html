@@ -57,7 +57,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
               <h1>Week 49-50</h1>
-              <h2 class="subheading">Presentation for Fourth Review Meeting and Demonstration.</h2>
+              <h2 class="subheading">Presentation for Final Review Meeting and Demonstration.</h2>
               <span class="meta">Posted by
                 <a href="about.html">Avinash Sen</a>
                 on June 5, 2020</span>
@@ -72,26 +72,40 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p><font size="6"><b>Presentation</b></font></p>
-            <p>On July 4th, we had our Third NCRAI Meeting, in which every member of the <a href="http://gectcr.ac.in/">NCRAI</a> 
-              had to present their project status and remaining tasks for this last semester.
+            <p><font size="6"><b>Presentation and Demonstrarion</b></font></p>
+            <p>
+              On June 30th, we had our Final NCRAI Meeting,
             </p>
             <p>
               Therefore, this week was dedicated for the preparation of my presentation.
             </p>
             <p>
-            <p><b>Presentation Overview:</b></p>
+            <p><b>Final Presentation Overview:</b></p>
               <center>                  
                 <iframe width="640" height="360"
-                  src="https://www.youtube.com/embed/cS64Wbs5HS8?autoplay=1&loop=1&playlist=cS64Wbs5HS8">
+                  src="https://www.youtube.com/embed/1sZvHIoQFOA?autoplay=1&loop=1&playlist=1sZvHIoQFOA">
                 </iframe>
               </center>                
             </p> 
 
             <p><font size="6"><b>Demonstration</b></font></p>
-            <p>Since one of the main objectives of this project is the creation of an active vision unit for the detection and pose estimation of objects with high accuracy for further manipulation.
-              The demonstration was performed similarly to the previous tests.
+            <p>
+              For this particular project, this sort of assessment could be done by evaluating the number of successes in the identiﬁcation and pose estimation of a demo object.
+              For better results, we took the object cracker, almost random, at various areas on a table in front of the robot, at various orientations for each of the places.
+              The objects were located approximately 800 mm away from the camera.We applied the object detection and position estimation functions, and compared the measured distance and actual distance values.
+              In the distance measurements taken from the input images, the offset value is applied to correct the actual distance.
             </p>
+
+            <center>
+              <p><img class="img-fluid" src="img/results.png" alt=""></p>
+            </center>
+
+            <p>
+              In the experiment on the cracker box, the mean distance error was 0.81, and the standard deviation was 0.7, for detected object.
+              As demonstrated through the experiment results above, the average error rate in the distance to the target object was around 1 mm.
+              Therefore, even when assuming that an error of up to 2 mm may occur, there was no problem for the robot to pick up the object in our bin picking environment.
+            </p>
+
             <p>
               <center>
                <iframe width="640" height="360"
@@ -99,7 +113,11 @@
                </iframe>
               </center>
             </p>
-              
+            
+            <p>
+              The prototype object detected and pose estimated successfully in various orientations. We rotated the objects 6-DOF and the object detection was quite successful.
+            </p>
+            </p>  
             <!-- Pager -->
             <div class="clearfix">
               <a class="btn btn-primary float-left" href="post_46_48.html">&larr;Previous Week </a>
