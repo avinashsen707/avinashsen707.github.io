@@ -1,4 +1,4 @@
-# [Bin Picking System - Master's Project Blog](https://avinashsen707.github.io/)
+# [Bin Picking System - Master Research Project Blog](https://avinashsen707.github.io/)
 
 ## Development and Evaluation of a Deep Learning based Robotic Bin Picking Vision System using ROS
 The technique used by a robot to grab objects that are randomly placed inside a box or a pallet is called bin picking.
