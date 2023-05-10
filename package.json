@@ -31,8 +31,8 @@
         "jquery": "3.5.0"
     },
     "devDependencies": {
-        "browser-sync": "2.23.6",
-        "gulp": "^3.9.1",
+        "browser-sync": "2.29.1",
+        "gulp": "^4.0.2",
         "gulp-clean-css": "3.9.2",
         "gulp-header": "2.0.1",
         "gulp-rename": "^1.2.2",
